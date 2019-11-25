@@ -1,2 +1,2 @@
 # Deezer
-Deezer App for DVT
+Deezer App
