@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from "../services/http.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,24 +9,19 @@ import { HttpService } from "../services/http.service";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private router: Router) { }
 
-  serckKeywords: string = "";
-  serverData: any[];
 
   ngOnInit() {
-
-    this.http.getServerData3().subscribe( data => {
-      var parsed_data = JSON.parse(JSON.stringify(data));
-      this.serverData = parsed_data.data;
-      console.log("This is the data", this.serverData);
-    });
-
-    // this.gitSvc.getProfile().subscribe(
-    //   data => {
-    //     this.profileValues = data;
-    //   }
-    // );
+    this.http.getServerData('justin bieber');  
   }
+
+
+  goToDetail(data) {
+    console.log(data);
+
+    this.router.navigate(['detail'], {state: {data}});
+  }
+
 
 }

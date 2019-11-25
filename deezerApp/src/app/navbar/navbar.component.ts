@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../services/http.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  searchString: string;
+
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
+  }
+
+
+  search () {
+    this.http.getServerData(this.searchString);
   }
 
 }

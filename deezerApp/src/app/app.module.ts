@@ -8,13 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from "@angular/forms";
 import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
+import { DetailComponent } from './detail/detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

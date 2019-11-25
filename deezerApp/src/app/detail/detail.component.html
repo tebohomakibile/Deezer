@@ -1,0 +1,36 @@
+
+<div class="row mt-5">
+    <div class="col-md-8">
+        <div class="container-img">
+            <img src="{{obj.artist.picture_xl}}" class="card-img-top pointer rounded-circle" alt="Artist Image">
+            <div class="centered">
+                <h3>
+                    {{obj.artist.name}}
+                </h3>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="col-md-4">
+        <h5>Top Tracks</h5>
+        <ol class="list-group list-group-flush align-middle">
+            <li class="list-group-item">{{obj.title}}</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <h5>Albums</h5>
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{{obj.album.cover}}" class="card-img-top pointer" alt="..." (click)="goToDetail(obj)">
+            <div class="card-body">
+                <h6 class="card-title">{{obj.album.title}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
